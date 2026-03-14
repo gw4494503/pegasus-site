@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pegasus Physician Writers — Medical Humanities & Creative Writing · Stanford</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{forest:'#2C4A2E',gold:'#C4943A',parchment:'#F2EDE4',ink:'#1C1C1C',moss:'#3D5C40'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],display:['"Outfit"','sans-serif'],drama:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:#F2EDE4;color:#1C1C1C;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;margin:0}
+.btn-m{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s ease;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none}
+.btn-m:hover{transform:scale(1.03)}
+.btn-m .fill{position:absolute;inset:0;background:rgba(255,255,255,.12);transform:translateX(-101%);transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+.btn-m:hover .fill{transform:translateX(0)}
+#nav{transition:background .4s,border-color .4s}
+#nav.s{background:rgba(242,237,228,.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(44,74,46,.18)!important}
+#nav.s .nlogo,#nav.s .nlink{color:#2C4A2E!important}
+#nav.s .nav-cta{background:#C4943A!important}
+.card-hover{transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s ease;border-radius:1.75rem}
+.card-hover:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(44,74,46,.13)}
+.gsap-fade{opacity:0;transform:translateY(32px)}
+@media(max-width:768px){.hero-h2{font-size:clamp(3.5rem,15vw,7rem)!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-transparent rounded-full px-5 py-2.5 flex items-center gap-6 w-[94%] max-w-4xl">
+  <a href="#" class="nlogo font-display font-bold text-xs tracking-[0.22em] uppercase text-parchment mr-auto whitespace-nowrap transition-colors duration-300">PEGASUS PHYSICIAN WRITERS</a>
+  <div class="hidden md:flex items-center gap-5">
+    <a href="#about" class="nlink text-parchment/75 text-sm font-medium hover:-translate-y-px transition-all duration-200">About</a>
+    <a href="#programs" class="nlink text-parchment/75 text-sm font-medium hover:-translate-y-px transition-all duration-200">Programs</a>
+    <a href="#publications" class="nlink text-parchment/75 text-sm font-medium hover:-translate-y-px transition-all duration-200">Publications</a>
+    <a href="#contact" class="nlink text-parchment/75 text-sm font-medium hover:-translate-y-px transition-all duration-200">Contact</a>
+  </div>
+  <a href="http://www.pegasusphysicians.org/" target="_blank" class="btn-m nav-cta bg-gold text-white text-xs font-semibold px-5 py-2.5 rounded-full tracking-wide"><span class="fill"></span><span class="relative z-10">Join Us</span></a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="relative flex items-end overflow-hidden" style="height:100dvh;min-height:680px">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80" alt="Forest" class="w-full h-full object-cover object-center" loading="eager">
+    <div class="absolute inset-0" style="background:linear-gradient(to top,#1C1C1C 0%,rgba(28,28,28,.65) 40%,rgba(44,74,46,.2) 100%)"></div>
+  </div>
+  <div class="relative z-10 pb-16 md:pb-24 pl-8 md:pl-16 lg:pl-24 max-w-5xl">
+    <p id="h-tag" class="font-mono text-gold text-xs tracking-[0.28em] uppercase mb-5 opacity-0">Medical Humanities & Creative Writing · Stanford University · Est. 2008</p>
+    <h1 id="h-l1" class="font-display font-bold text-parchment text-4xl md:text-5xl tracking-tight leading-none mb-1 opacity-0">Humanizing medicine</h1>
+    <h1 id="h-l2" class="hero-h2 font-drama italic text-parchment opacity-0" style="font-size:clamp(5rem,12vw,10rem);line-height:0.88">through writing</h1>
+    <p id="h-sub" class="font-sans text-parchment/60 text-base md:text-lg max-w-lg mt-7 mb-8 leading-relaxed opacity-0">A community of physicians and physicians-in-training at Stanford who gather to workshop their creative writing — and find their voice on the page.</p>
+    <div id="h-cta" class="flex flex-wrap gap-3 opacity-0">
+      <a href="http://www.pegasusphysicians.org/" target="_blank" class="btn-m bg-gold text-white font-semibold px-7 py-3.5 rounded-full text-sm"><span class="fill"></span><span class="relative z-10">Join the Community</span></a>
+      <a href="#about" class="btn-m border border-parchment/35 text-parchment font-medium px-7 py-3.5 rounded-full text-sm"><span class="fill" style="background:rgba(255,255,255,.05)"></span><span class="relative z-10">Learn More ↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 px-6 md:px-12 lg:px-20 bg-parchment">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <p class="font-mono text-gold text-xs tracking-[0.25em] uppercase mb-5 gsap-fade">Who We Are</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-ink mb-8 gsap-fade">Where physicians<br><span class="text-forest">find their voice.</span></h2>
+        <div class="space-y-5 text-ink/70 text-base leading-relaxed gsap-fade">
+          <p>Pegasus Physician Writers was founded in 2008 when six physicians at Stanford Medical Center — including Irvin D. Yalom, MD — formed a writers' group, meeting monthly to share and critique each other's work. What began as a small gathering has grown into a vibrant community spanning students, residents, fellows, and faculty.</p>
+          <p>Modeled on the Iowa Writers' Workshop, Pegasus offers small, intensive, ongoing workshops where physician-writers develop their craft across poetry, fiction, nonfiction, journalism, and educational writing for the public.</p>
+          <p>Our mission is to humanize medicine through the craft of writing — fostering emerging voices at every stage of a medical career, and providing the community, skills, resources, and support needed for a path toward publication.</p>
+          <p>Over the past decade, Pegasus members have collectively published nearly 100 books, broadening public understanding of the science and art of medicine.</p>
+        </div>
+      </div>
+      <div class="space-y-5 gsap-fade">
+        <div class="p-7 rounded-2xl" style="background:#2C4A2E">
+          <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-4">Director</p>
+          <p class="font-display font-bold text-parchment text-xl mb-1">Jennifer Pien, MD</p>
+          <p class="text-parchment/55 text-sm leading-relaxed mb-4">Clinical Associate Professor, Department of Psychiatry & Behavioral Sciences, Stanford University.</p>
+          <a href="https://www.jennpien.com" target="_blank" class="font-mono text-gold text-xs hover:translate-x-1 transition-transform inline-block">jennpien.com →</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl text-center" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.12)">
+            <p class="font-drama italic text-ink" style="font-size:2.5rem;line-height:1">100+</p>
+            <p class="font-mono text-ink/45 text-[10px] tracking-widest uppercase mt-1">Books Published</p>
+          </div>
+          <div class="p-6 rounded-2xl text-center" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.12)">
+            <p class="font-drama italic text-ink" style="font-size:2.5rem;line-height:1">2008</p>
+            <p class="font-mono text-ink/45 text-[10px] tracking-widest uppercase mt-1">Year Founded</p>
+          </div>
+          <div class="p-6 rounded-2xl text-center" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.12)">
+            <p class="font-drama italic text-ink" style="font-size:2.5rem;line-height:1">Monthly</p>
+            <p class="font-mono text-ink/45 text-[10px] tracking-widest uppercase mt-1">Workshops</p>
+          </div>
+          <div class="p-6 rounded-2xl text-center" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.12)">
+            <p class="font-drama italic text-ink" style="font-size:2.5rem;line-height:1">All</p>
+            <p class="font-mono text-ink/45 text-[10px] tracking-widest uppercase mt-1">Career Stages</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="relative py-32 px-6 overflow-hidden" style="background:#1C1C1C">
+  <div class="absolute inset-0 opacity-10">
+    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=60" alt="" class="w-full h-full object-cover" style="filter:saturate(0.2)">
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <p class="font-mono text-gold text-xs tracking-[0.28em] uppercase mb-12 gsap-fade">Our Mission</p>
+    <h2 class="font-drama italic gsap-fade" style="font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;color:#F2EDE4">
+      To foster <em style="color:#C4943A;font-style:normal">emerging voices</em> — and provide the community, skills, and support for a path toward publication.
+    </h2>
+    <div class="mt-16 grid md:grid-cols-3 gap-8 text-left gsap-fade">
+      <div class="border-t border-parchment/15 pt-6">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-3">Craft</p>
+        <p class="text-parchment/60 text-sm leading-relaxed">Workshop-based training in poetry, fiction, nonfiction, journalism, and educational writing — grounded in the Iowa Writers' Workshop model.</p>
+      </div>
+      <div class="border-t border-parchment/15 pt-6">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-3">Community</p>
+        <p class="text-parchment/60 text-sm leading-relaxed">A welcoming space for physicians at every stage — from first-year medical students to emeritus faculty — to write, share, and grow together.</p>
+      </div>
+      <div class="border-t border-parchment/15 pt-6">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-3">Publication</p>
+        <p class="text-parchment/60 text-sm leading-relaxed">Resources, mentorship, and partnerships with publishers and literary organizations to help physician-writers reach a wider audience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="py-24 px-6 md:px-12 lg:px-20 bg-parchment">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14">
+      <p class="font-mono text-gold text-xs tracking-[0.25em] uppercase mb-3 gsap-fade">What We Offer</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink gsap-fade">Programs & awards<br>for physician-writers.</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <div class="card-hover p-8 gsap-fade" style="background:#2C4A2E;border:1px solid rgba(44,74,46,.0)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Core Program</p>
+        <h3 class="font-display font-bold text-xl text-parchment mb-4">Monthly Writing Workshops</h3>
+        <p class="text-parchment/55 text-sm leading-relaxed">Small, intensive, ongoing workshops in the Stanford area where members share and critique each other's creative writing. Open to physicians, residents, fellows, medical students, and faculty across all career stages and genres.</p>
+        <div class="mt-6 pt-6 border-t border-parchment/10">
+          <span class="font-mono text-parchment/30 text-xs">→ Modeled on the Iowa Writers' Workshop</span>
+        </div>
+      </div>
+
+      <div class="card-hover p-8 gsap-fade" style="background:rgba(196,148,58,.12);border:1px solid rgba(196,148,58,.25)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Annual Award</p>
+        <h3 class="font-display font-bold text-xl text-ink mb-4">Irvin D. Yalom Literary Award</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">Open to undergraduate and medical students, house staff, and fellows. Recognizes an exceptional essay or creative work — poetry, fiction, or nonfiction — describing an experience with medicine as a doctor, trainee, or patient.</p>
+        <div class="mt-6 pt-6 border-t border-gold/20">
+          <span class="font-mono text-gold text-xs">→ Honoring Dr. Irvin D. Yalom, founding member</span>
+        </div>
+      </div>
+
+      <div class="card-hover p-8 gsap-fade" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.13)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Workshop Series</p>
+        <h3 class="font-display font-bold text-xl text-ink mb-4">Marginalized Voices in Literature</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">A dedicated workshop series designed to center and empower marginalized voices within the literary community — examining prose from underrepresented writers and providing space for students to produce and share their own work.</p>
+        <div class="mt-6 pt-6 border-t border-forest/10">
+          <span class="font-mono text-ink/30 text-xs">→ Equity-centered literary education</span>
+        </div>
+      </div>
+
+      <div class="card-hover p-8 gsap-fade" style="background:rgba(44,74,46,.07);border:1px solid rgba(44,74,46,.13)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Student Program</p>
+        <h3 class="font-display font-bold text-xl text-ink mb-4">Stanford Immersion in Medicine</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">Stanford undergraduate students can apply through the Stanford Immersion in Medicine Series to shadow Pegasus Physician Writer members — observing psychiatric evaluations of pediatric patients at Lucile Packard Children's Hospital.</p>
+        <div class="mt-6 pt-6 border-t border-forest/10">
+          <span class="font-mono text-ink/30 text-xs">→ Lucile Packard Children's Hospital</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="py-24 px-6 md:px-12 lg:px-20" style="background:#2C4A2E">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14">
+      <p class="font-mono text-gold text-xs tracking-[0.25em] uppercase mb-3 gsap-fade">Throughout the Year</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-parchment gsap-fade">Events, readings<br>& symposia.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <div class="card-hover p-7 gsap-fade" style="background:rgba(242,237,228,.07);border:1px solid rgba(242,237,228,.12);border-radius:1.75rem">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-4">Recurring</p>
+        <h3 class="font-display font-bold text-lg text-parchment mb-3">Stanford Bookstore Readings</h3>
+        <p class="text-parchment/50 text-sm leading-relaxed">Members read from their published and in-progress work at the Stanford Bookstore, bringing physician voices directly to the public.</p>
+      </div>
+
+      <div class="card-hover p-7 gsap-fade" style="background:rgba(242,237,228,.07);border:1px solid rgba(242,237,228,.12);border-radius:1.75rem">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-4">Annual · November</p>
+        <h3 class="font-display font-bold text-lg text-parchment mb-3">Poetry & Music Evening</h3>
+        <p class="text-parchment/50 text-sm leading-relaxed">A joint poetry and music event with the St. Lawrence String Quartet — an evening at the intersection of medicine, literature, and performance.</p>
+      </div>
+
+      <div class="card-hover p-7 gsap-fade" style="background:rgba(242,237,228,.07);border:1px solid rgba(242,237,228,.12);border-radius:1.75rem">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-4">Jan · Mar · Jul · Oct</p>
+        <h3 class="font-display font-bold text-lg text-parchment mb-3">Symposiums & Seminars</h3>
+        <p class="text-parchment/50 text-sm leading-relaxed">Regular campus events throughout the year exploring the context of medicine, the meaning of doctoring, health care, and the human condition.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="py-24 px-6 md:px-12 lg:px-20 bg-parchment">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14">
+      <p class="font-mono text-gold text-xs tracking-[0.25em] uppercase mb-3 gsap-fade">Writing & Publishing</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink gsap-fade">Nearly 100 books.<br>Countless stories told.</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <div class="card-hover p-8 gsap-fade" style="background:#F2EDE4;border:1px solid rgba(44,74,46,.13);box-shadow:0 4px 32px rgba(44,74,46,.07)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Member Publications</p>
+        <h3 class="font-display font-bold text-xl text-ink mb-4">Books by Pegasus Members</h3>
+        <p class="text-ink/65 text-sm leading-relaxed mb-6">Pegasus members write and publish across every genre — poetry, fiction, nonfiction, journalism, and educational texts — with the intent to broaden public understanding of the science and art of medicine. Over the past decade, the group has collectively published nearly 100 books.</p>
+        <a href="https://www.pegasusphysicians.org/book-publications" target="_blank" class="font-mono text-gold text-xs hover:translate-x-1 transition-transform inline-block">View Publications →</a>
+      </div>
+
+      <div class="card-hover p-8 gsap-fade" style="background:#2C4A2E;border:1px solid rgba(44,74,46,.0);box-shadow:0 4px 32px rgba(44,74,46,.15)">
+        <p class="font-mono text-gold text-[10px] tracking-widest uppercase mb-5">Literary Journal</p>
+        <h3 class="font-display font-bold text-xl text-parchment mb-4">The Pegasus Review</h3>
+        <p class="text-parchment/55 text-sm leading-relaxed mb-6">An online literary journal publishing essays and narratives at the intersection of health care, illness, and the human condition. A founding collaboration with the Oxford Review of Books × Stanford and Bellevue Literary Press.</p>
+        <a href="https://thepegasusreview.com/2019/05/" target="_blank" class="font-mono text-gold text-xs hover:translate-x-1 transition-transform inline-block">Read the Review →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="pt-20 pb-12 px-6 md:px-12 lg:px-20" style="background:#1C1C1C;border-radius:3rem 3rem 0 0">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-12 mb-16 pb-12" style="border-bottom:1px solid rgba(242,237,228,.08)">
+      <div class="md:col-span-2">
+        <p class="font-display font-bold text-parchment text-xl tracking-wide mb-3">Pegasus Physician Writers</p>
+        <p class="font-drama italic text-parchment/40 text-lg mb-6">Medicine. Craft. Community.</p>
+        <p class="text-parchment/40 text-sm leading-relaxed max-w-sm">A creative writing and publication program within Stanford's Medical Humanities and the Arts — open to physicians and physicians-in-training at all career stages.</p>
+      </div>
+      <div>
+        <p class="font-mono text-parchment/30 text-[10px] tracking-widest uppercase mb-5">Navigation</p>
+        <div class="space-y-3">
+          <a href="#" class="block text-parchment/55 text-sm hover:text-parchment hover:-translate-y-px transition-all">Home</a>
+          <a href="#about" class="block text-parchment/55 text-sm hover:text-parchment hover:-translate-y-px transition-all">About</a>
+          <a href="#programs" class="block text-parchment/55 text-sm hover:text-parchment hover:-translate-y-px transition-all">Programs</a>
+          <a href="#publications" class="block text-parchment/55 text-sm hover:text-parchment hover:-translate-y-px transition-all">Publications</a>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-parchment/30 text-[10px] tracking-widest uppercase mb-5">Links</p>
+        <div class="space-y-3 text-sm">
+          <p><a href="http://www.pegasusphysicians.org/" target="_blank" class="text-parchment/55 hover:text-gold transition-colors">pegasusphysicians.org</a></p>
+          <p><a href="https://thepegasusreview.com/2019/05/" target="_blank" class="text-parchment/55 hover:text-gold transition-colors">The Pegasus Review</a></p>
+          <p><a href="https://www.jennpien.com" target="_blank" class="text-parchment/55 hover:text-gold transition-colors">Jennifer Pien, MD</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-mono text-parchment/25 text-[10px] tracking-wider">© 2026 Pegasus Physician Writers · Stanford University · All Rights Reserved</p>
+      <p class="font-mono text-parchment/25 text-[10px] tracking-wider">Director: Jennifer Pien, MD · Medical Humanities & the Arts</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({delay:0.3});
+tl.to('#h-tag',{opacity:1,y:0,duration:0.7,ease:'power3.out'})
+  .to('#h-l1',{opacity:1,y:0,duration:0.7,ease:'power3.out'},'-=0.4')
+  .to('#h-l2',{opacity:1,y:0,duration:0.9,ease:'power3.out'},'-=0.5')
+  .to('#h-sub',{opacity:1,y:0,duration:0.7,ease:'power3.out'},'-=0.5')
+  .to('#h-cta',{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.4');
+
+const hero = document.getElementById('hero');
+const nav = document.getElementById('nav');
+const io = new IntersectionObserver(([e])=>{
+  nav.classList.toggle('s',!e.isIntersecting);
+},{threshold:0.05});
+io.observe(hero);
+
+gsap.utils.toArray('.gsap-fade').forEach(el=>{
+  gsap.to(el,{
+    opacity:1,y:0,duration:0.75,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+  });
+});
+</script>
+</body>
+</html>
